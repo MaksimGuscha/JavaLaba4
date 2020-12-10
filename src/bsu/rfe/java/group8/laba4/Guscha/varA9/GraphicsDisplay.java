@@ -147,7 +147,7 @@ public class GraphicsDisplay extends JPanel {
         // Шаг 2 - Организовать цикл по всем точкам графика
         for (int i = 0; i < graphicsData.length; i++){
             // Выбрать зеленый цвет для закрашивания маркеров внутри
-            canvas.setPaint(Color.YELLOW);
+            canvas.setPaint(Color.GREEN);
             double x1 = graphicsData[i][1];
             x1 = Math.sqrt(x1);
             int whole = (int)x1;
@@ -220,11 +220,11 @@ public class GraphicsDisplay extends JPanel {
         }
         if(minY <= 0.0 && maxY >= 0.0){
 
-            canvas.draw(new Line2D.Double(xyToPoint(minX, 0), xyToPoint(maxX, 0)));
+            canvas.draw(new Line2D.Double(xyToPoint(minX, 1), xyToPoint(maxX, 1)));
 
             GeneralPath arrow = new GeneralPath();
             //стрелка
-            Point2D.Double lineEnd = xyToPoint(maxX, 0);
+            Point2D.Double lineEnd = xyToPoint(maxX, 1);
             arrow.moveTo(lineEnd.getX(), lineEnd.getY());
 
             arrow.lineTo(arrow.getCurrentPoint().getX() - 20, arrow.getCurrentPoint().getY() -5);
@@ -238,7 +238,7 @@ public class GraphicsDisplay extends JPanel {
             Rectangle2D bounds = axisFont.getStringBounds("x", context);
             Point2D.Double labelPos = xyToPoint(maxX, 0);
 
-            canvas.drawString("x", (float)labelPos.getX() - 25, (float)(labelPos.getY() + bounds.getY()));
+            canvas.drawString("x", (float)labelPos.getX() - 10, (float)(labelPos.getY() + bounds.getY()));
         }
     }
     /* Метод-помощник, осуществляющий преобразование координат.
