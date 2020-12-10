@@ -137,15 +137,15 @@ public class MainFrame extends JFrame {
                         showAxisMenuItem.setEnabled(fileLoaded);
                         showMarkersMenuItem.setEnabled(fileLoaded);
                 }
-        }
-        // Обработчик, вызываемый после того, как меню исчезло с экрана
-        @Override
-        public void menuDeselected(MenuEvent e) {
+                // Обработчик, вызываемый после того, как меню исчезло с экрана
+                @Override
+                public void menuDeselected(MenuEvent e) {
 
-        }
-        // Обработчик, вызываемый в случае отмены выбора пункта меню (очень редкая ситуация)
-        @Override
-        public void menuCanceled(MenuEvent e) {
+                }
+                // Обработчик, вызываемый в случае отмены выбора пункта меню (очень редкая ситуация)
+                @Override
+                public void menuCanceled(MenuEvent e) {
 
+                }
         }
 }
